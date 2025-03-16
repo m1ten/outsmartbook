@@ -1,18 +1,18 @@
 {
-  "name": "smarterbook",
-  "version": "1.4.0",
-  "description": "",
+  "name": "outsmartbook",
+  "version": "2.0",
+  "description": "Out the side box experience for McGraw Hill SmartBooks",
   "main": "content.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micahlt/smarterbook.git"
+    "url": "git+https://github.com/m1ten/outsmartbook.git"
   },
   "author": "Micah Lindley",
   "bugs": {
-    "url": "https://github.com/micahlt/smarterbook/issues"
+    "url": "https://github.com/m1ten/outsmartbook/issues"
   },
-  "homepage": "https://github.com/micahlt/smarterbook#readme"
+  "homepage": "https://github.com/m1ten/outsmartbook#readme"
 }
