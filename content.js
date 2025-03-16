@@ -108,7 +108,52 @@ window.addEventListener("load", () => {
         const response = data.response || "";
         let answerSelected = false;
         
-        // Find the most similar answer option
+        // Check for fill-in-the-blank text input fields first
+        const textInputs = rootEl.querySelectorAll('input.fitb-input[aria-label="Field 1 of 1"]');
+        if (textInputs && textInputs.length > 0) {
+          // This is a fill-in-the-blank question
+          console.log("Fill-in-the-blank question detected");
+          
+          const randomAnswer = Math.random().toString(36).substring(2, 7);
+          
+          // Fill in each blank with the random answer
+          textInputs.forEach((input) => {
+            // Set the value and dispatch events to trigger validation
+            input.value = randomAnswer;
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+            
+            // Highlight the input to indicate it's been filled
+            input.style.backgroundColor = '#ffebf0';
+            input.style.border = '2px solid #ff5722';
+          });
+          
+          answerSelected = true;
+          
+          // Wait a short time then click the low confidence button
+          if (answerSelected) {
+            setTimeout(() => {
+              const confidenceButtons = document.querySelector(".confidence-buttons-container");
+              if (confidenceButtons) {
+                const lowConfidenceButton = confidenceButtons.querySelector('button[aria-label="Low Confidence"]');
+                if (lowConfidenceButton && !lowConfidenceButton.disabled) {
+                  lowConfidenceButton.click();
+                  
+                  // Rest of the confidence button handling code...
+                  setTimeout(() => {
+                    // Existing code for checking reading resources
+                    // ...
+                  }, 1000);
+                }
+              }
+            }, 500);
+          }
+          
+          // Skip the radio/checkbox handling since we've handled the text input
+          return;
+        }
+        
+        // Existing radio/checkbox handling code
         const choiceElements = rootEl.querySelectorAll("mhe-radio-button input[type='radio'], input[type='checkbox']");
         if (choiceElements && choiceElements.length > 0) {
           let bestMatch = null;
