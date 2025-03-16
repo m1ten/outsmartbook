@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "OutSmartBook",
-  "description": "Out the side box experience for McGraw Hill SmartBooks",
+  "description": "Out of the box experience for McGraw Hill SmartBooks",
   "icons": { "128": "icon.png" },
   "version": "2.0",
   "permissions": ["activeTab"],

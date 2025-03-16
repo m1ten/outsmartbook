@@ -1,7 +1,11 @@
-# SmarterBook
+# OutSmartBook
 
-A better experience for McGraw Hill SmartBooks
+Out of the box experience for McGraw Hill SmartBooks
 
-![](promo-1.png)
+Install the extension and start ollama:
 
-[![https://chromewebstore.google.com/detail/smarterbook/jikphdlhfedfoblcfdjaibhaanofgihd](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/tbyBjqi7Zu733AAKA5n4.png)](https://chromewebstore.google.com/detail/smarterbook/jikphdlhfedfoblcfdjaibhaanofgihd)
+```sh
+OLLAMA_ORIGINS=chrome-extension://* ollama serve
+```
+
+![image](promo-1.png)
