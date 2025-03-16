@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/m1ten/outsmartbook.git"
   },
-  "author": "Micah Lindley",
+  "contributors": [
+    "miten", "Micah Lindley"
+  ],
   "bugs": {
     "url": "https://github.com/m1ten/outsmartbook/issues"
   },
