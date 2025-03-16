@@ -1,6 +1,8 @@
 # OutSmartBook
 
-Out of the box experience for McGraw Hill SmartBooks
+## Out of the box experience for McGraw Hill SmartBooks
+
+### Installation
 
 Install the extension and start ollama:
 
@@ -8,4 +10,9 @@ Install the extension and start ollama:
 OLLAMA_ORIGINS=chrome-extension://* ollama serve
 ```
 
-![image](promo-1.png)
+### Roadmap
+
+- [ ] Add Firefox support
+- [ ] Give Llama access to chapters
+
+![OutSmartBook Promo](promo-1.png)
