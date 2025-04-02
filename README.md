@@ -49,6 +49,8 @@ Note: For permanent installation, the extension needs to be signed and published
 - [x] Add Firefox support
 - [ ] Give Llama access to chapters
 - [ ] Add Quizlet support
+- [ ] Embed AI model in the extension
+- [ ] Add a "Read Aloud" feature (Accessibility)
 
 ### Acknowledgements
 
