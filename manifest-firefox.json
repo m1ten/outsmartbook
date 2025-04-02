@@ -5,9 +5,18 @@
   "icons": { "128": "icon.png" },
   "version": "2.0",
   "permissions": ["activeTab"],
-  "host_permissions": ["http://localhost:11434/*"],
+  "host_permissions": [
+    "http://localhost:11434/*", 
+    "*://learning.mheducation.com/*"
+  ],
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "outsmartbook@example.com",
+      "strict_min_version": "109.0"
+    }
   },
   "content_scripts": [
     {

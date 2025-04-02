@@ -1,8 +1,21 @@
 console.log("OutSmartBook 🔥");
 
-// initialization
+const browserAPI = (function() {
+  if (typeof browser !== 'undefined' && browser.runtime) {
+    return {
+      name: 'Firefox',
+      runtime: browser.runtime
+    };
+  } else {
+    return {
+      name: 'Chrome',
+      runtime: chrome.runtime
+    };
+  }
+})();
+
 window.addEventListener("load", () => {
-  console.log("OutSmartBook LOADED ⚡️");
+  console.log(`OutSmartBook LOADED on ${browserAPI.name} ⚡️`);
   const rootEl = document;
   
   // detect new questions
@@ -354,7 +367,7 @@ window.addEventListener("load", () => {
 
 function generateWithOllama(data) {
   return new Promise((resolve, reject) => {
-    chrome.runtime.sendMessage({
+    browserAPI.runtime.sendMessage({
       type: 'ollama_generate',
       data: data
     }, response => {

@@ -11,10 +11,14 @@
     "url": "git+https://github.com/m1ten/outsmartbook.git"
   },
   "contributors": [
-    "miten", "Micah Lindley"
+    "miten",
+    "Micah Lindley"
   ],
   "bugs": {
     "url": "https://github.com/m1ten/outsmartbook/issues"
   },
-  "homepage": "https://github.com/m1ten/outsmartbook#readme"
+  "homepage": "https://github.com/m1ten/outsmartbook#readme",
+  "devDependencies": {
+    "archiver": "^7.0.1"
+  }
 }

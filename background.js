@@ -1,4 +1,20 @@
-chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+const browserAPI = (function() {
+  if (typeof browser !== 'undefined' && browser.runtime) {
+    return {
+      name: 'Firefox',
+      runtime: browser.runtime
+    };
+  } else {
+    return {
+      name: 'Chrome',
+      runtime: chrome.runtime
+    };
+  }
+})();
+
+console.log(`OutSmartBook background running on ${browserAPI.name}`);
+
+browserAPI.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message.type === 'ollama_generate') {
     fetch('http://localhost:11434/api/generate', {
       method: 'POST',
